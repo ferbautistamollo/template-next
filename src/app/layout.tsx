@@ -7,7 +7,8 @@ import { Providers } from "./providers";
 
 import { fontSans } from "@/utils/fonts";
 import { Navbar } from "@/components/header/navbar";
-import { getDeployEnvironment } from "@/utils/envs";
+import { SidebarRoot } from "@/components/header/sidebarRoot";
+import { BreadcrumbsState } from "@/components/common";
 
 export const metadata: Metadata = {
   title: {
@@ -27,11 +28,7 @@ export const viewport: Viewport = {
   ],
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html suppressHydrationWarning lang="en">
       <head />
@@ -41,19 +38,19 @@ export default function RootLayout({
           fontSans.variable,
         )}
       >
-        <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
-          <div className="relative flex flex-col h-screen">
-            <Navbar />
-            <main className="container mx-auto max-w-7xl pt-16 px-6 flex-grow">
-              {children}
-            </main>
-            {getDeployEnvironment() === "dev" && (
-              <footer className="fixed bottom-0 left-0 w-full bg-red-600 text-white text-center py-2 text-sm z-50">
-                <span className="uppercase text-sm font-semibold">
-                  Versión de pruebas
-                </span>
-              </footer>
-            )}
+        <Providers themeProps={{ attribute: "class", defaultTheme: "light" }}>
+          <div className="flex flex-col h-screen">
+            <Navbar name="TEMPLATE MUSERPOL" />
+            <div className="flex flex-1 overflow-x-hidden">
+              <SidebarRoot />
+              <main className="flex-1 overflow-y-auto bg-slate-50 dark:bg-neutral-950">
+                <BreadcrumbsState />
+                {children}
+              </main>
+            </div>
+            {/* <footer className="bg-red-600 text-white text-center py-2 text-sm">
+              <span className="uppercase text-sm font-semibold">Versión de pruebas</span>
+            </footer> */}
           </div>
         </Providers>
       </body>
