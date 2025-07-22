@@ -198,3 +198,68 @@ export const SearchIcon = (props: IconSvgProps) => (
     />
   </svg>
 );
+
+export const CollapseTrueIcon = (props: IconSvgProps) => {
+  return (
+    <svg
+      aria-hidden="true"
+      focusable="false"
+      height="24px"
+      role="presentation"
+      viewBox="0 0 24 24"
+      width="24px"
+      {...props}
+    >
+      <g>
+        <path d="M0 0H24V24H0z" fill="none" />
+        <path
+          d="M21 18v2H3v-2h18zM6.596 3.904L8.01 5.318 4.828 8.5l3.182 3.182-1.414 1.414L2 8.5l4.596-4.596zM21 11v2h-9v-2h9zm0-7v2h-9V4h9z"
+          fill="green"
+        />
+      </g>
+    </svg>
+  );
+};
+
+export const CollapseFalseIcon = (props: IconSvgProps) => {
+  return (
+    <svg
+      aria-hidden="true"
+      focusable="false"
+      height="24px"
+      role="presentation"
+      viewBox="0 0 24 24"
+      width="24px"
+      {...props}
+    >
+      <g>
+        <path d="M0 0H24V24H0z" fill="none" />
+        <path
+          d="M21 18v2H3v-2h18zM17.404 3.904L22 8.5l-4.596 4.596-1.414-1.414L19.172 8.5 15.99 5.318l1.414-1.414zM12 11v2H3v-2h9zm0-7v2H3V4h9z"
+          fill="green"
+        />
+      </g>
+    </svg>
+  );
+};
+
+export const HomeIcon = (props: IconSvgProps) => {
+  return (
+    <svg
+      aria-hidden="true"
+      fill="#006400"
+      focusable="false"
+      height="24px"
+      role="presentation"
+      viewBox="0 0 24 24"
+      width="24px"
+      {...props}
+    >
+      <path
+        clipRule="evenodd"
+        d="M21.4498 10.275L11.9998 3.1875L2.5498 10.275L2.9998 11.625H3.7498V20.25H20.2498V11.625H20.9998L21.4498 10.275ZM5.2498 18.75V10.125L11.9998 5.0625L18.7498 10.125V18.75H14.9999V14.3333L14.2499 13.5833H9.74988L8.99988 14.3333V18.75H5.2498ZM10.4999 18.75H13.4999V15.0833H10.4999V18.75Z"
+        fillRule="evenodd"
+      />
+    </svg>
+  );
+};
