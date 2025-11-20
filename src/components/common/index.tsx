@@ -11,3 +11,5 @@ export {
 
 export { BreadcrumbsState } from "./breadcrumbsState";
 export { subtitle } from "./primitives";
+export { ThemeSwitch } from "./theme-switch";
+export { UserSession } from "./userSession";
