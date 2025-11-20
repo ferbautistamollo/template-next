@@ -3,5 +3,5 @@ export function getDeployEnvironment(): "dev" | "prod" | "test" {
 
   if (env === "prod" || env === "test" || env === "dev") return env;
 
-  return "test"; // por defecto
+  return "prod";
 }
